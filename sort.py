@@ -3,7 +3,13 @@ file2=open("Sorted.txt","w")
 
 #reads each line of Sort Me.txt and places it into a list
 with open("Sort Me.txt") as file1:
-    file1list = file1.read().splitlines()
+    file1listTemp = file1.read().splitlines()
+
+#removes extra whitespace in each string    
+file1list = []
+for item in file1listTemp:
+    strip = item.replace(' ','')
+    file1list.append(strip)
 
 #sorts alphabetically
 file1list.sort()
